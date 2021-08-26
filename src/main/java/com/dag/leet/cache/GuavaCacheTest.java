@@ -4,8 +4,6 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
-
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
@@ -46,5 +44,7 @@ public class GuavaCacheTest {
         System.out.println(CACHE.get("KEY_25487"));
 
         System.out.println(cache.get("KEY_25488", () -> "cache [" + "KEY_25488" + "]"));
+        cache.put("KEY_25499", "cache [" + "KEY_25499" + "]");
+        System.out.println(cache.get("KEY_25499", () -> ""));
     }
 }
